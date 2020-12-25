@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  dev:
+    image: 
+
+    container_name: dockertest
+
+    command: ["/vact-nest/entrypoint.sh"]
+
+    ports:
+      - "8080"
+
+    restart: always
+
+    volumes:
+      - type: bind
+        source: ${pwd}
+        target: /vact-nest/src
