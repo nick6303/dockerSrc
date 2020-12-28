@@ -1,5 +1,9 @@
 version: "3.7"
 
+networks:
+  vact-nest-network:
+    name: app-tier
+
 services:
   dev:
     build:
@@ -10,6 +14,12 @@ services:
 
     container_name: dockertest
 
+    stdin_open: true
+    tty: true
+
+    networks:
+      - vact-nest-network
+
     ports:
       - "8080"
 
@@ -18,5 +28,6 @@ services:
     volumes:
       - type: bind
         source: ${pwd}
-        target: /dockertest/src
+        target: '/dockertest/src'
+
     command: npm run serve

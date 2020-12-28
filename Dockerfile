@@ -1,7 +1,7 @@
 ## Stage 1
 FROM alpine/git:latest AS clone-repo
 
-ARG GITLAB_HOST=github.com/nick6303/
+ARG GITLAB_HOST=github.com/nick6303
 ARG GITLAB_API_TOKEN=ae6183668a3a135a779e4c419a9d89173fdd64d1
 
 WORKDIR /
