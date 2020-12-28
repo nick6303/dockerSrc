@@ -22,5 +22,3 @@ COPY --from=clone-repo /temp/package-lock.json .
 RUN npm install --silent
 
 COPY --from=clone-repo /temp .
-
-COPY src src
