@@ -1,0 +1,79 @@
+.alert
+  display: flex
+  justify-content: center
+  align-items: flex-start
+  position: relative
+  .close
+    +size(77px,80px)
+    background-image: url(~@img/rule/close.png)
+    background-size: 100% 100%
+    margin: 0 0 0 20px
+    transition: all .4s ease
+    @media (max-width: 1200px)
+      +size(15.3vmin, 15.9vmin)
+      position: absolute
+      bottom: calc(100% + 2vmin)
+      right: 1vmin
+  .pen
+    max-width: 670px
+    width: 90vw 
+    padding: 25px 60px 50px 150px
+    background-image: url(~@img/penBg.png)
+    background-size: 100% 100%
+    color: #fff
+    font-size: 26px
+    +flex-center
+    @media (max-width: 1200px)
+      max-width: none
+      font-size: 3.7vmin
+      width: 96vw 
+      padding: 3vmin 9vmin 7.5vmin 22vmin
+    @media (max-width: 700px)
+      font-size: 15px
+    &:hover 
+      &+ button.close,&~ .buttons
+        opacity: 0.4
+    &.finish
+      background-image: url(~@img/penBg2.png)
+      @media (max-width: 1200px)
+        background-image: url(~@img/penBg2_M.png)
+    p
+      position: relative
+      padding: 0 25px
+      text-align: center
+      font-weight: bolder
+      @media (max-width: 1200px)
+        padding: 0 4vmin
+      &:before,&:after
+        +fakeLine(4px,100%,#fff)
+        border-radius: 4px
+        position: absolute
+        top: 0
+        @media (max-width: 1200px)
+          width: 0.48vmin
+      &:before
+        left: 0
+      &:after
+        right: 0
+.alert .buttons
+  +flex-center
+  transition: all .4s ease
+  position: absolute
+  top: calc(100% + 30px)
+  left: 0
+  width: 100%
+  button
+    color: #fff
+    background-image: url(~@img/button.png)
+    background-size: 100% 100%
+    +size(230px,70px)
+    font-size: 26px
+    margin: 0 15px 
+    font-weight: bolder
+    @media (max-width: 1200px)
+      font-size: 3.9vmin
+      +size(34.8vmin,10.5vmin)
+    @media (max-width: 700px)
+      margin: 0 5px
+      font-size: 15px
+      +size(145px,45px)

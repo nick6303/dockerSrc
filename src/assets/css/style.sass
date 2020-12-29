@@ -1,0 +1,34 @@
+@import '@css/layout/_variable.sass'
+@import '@css/layout/_header.sass'
+@import '@css/layout/_footer.sass'
+
+@import '@css/pages/_home.sass'
+@import '@css/pages/_survey.sass'
+
+@import '@css/modal/_rule.sass'
+@import '@css/modal/_alert.sass'
+
+body
+  cursor: url(~@img/microphone.png),default
+  button[type="button"],a
+    cursor: url(~@img/press.png),default
+
+.scrollBox
+  position: relative
+  .ps__rail-x
+    display: none !important
+  .ps__rail-y
+    width: 1px !important
+    background-color: #8a8a8a !important
+    opacity: 1 !important
+    overflow: visible !important
+    margin: 0 3px
+    @media (max-width: 1200px)
+      margin: 0 0.8vmin
+    .ps__thumb-y,&:hover .ps__thumb-y
+      width: 7px
+      right: -3px
+      background-color: #440062
+      @media (max-width: 1200px)
+        width: 1.6vmin
+        right: -0.8vmin

@@ -1,0 +1,79 @@
+.vact-modal-wrapper .rule
+  position: relative
+  +flex-center
+  flex-direction: column
+  max-width: 660px
+  padding: 40px 40px 50px
+  background-image: url(~@img/rule/bg.png)
+  background-size: 100% 100%
+  @media (max-width: 1200px)
+    max-width: none
+    height: 100%
+    padding: 22vmin 4.8vmin 4vmin
+    background-image: url(~@img/rule/bg_M.png)
+    justify-content: flex-start
+  .close
+    position: absolute
+    +size(77px,80px)
+    background-image: url(~@img/rule/close.png)
+    background-size: 100% 100%
+    top: 0
+    left: calc(100% + 15px)
+    @media (max-width: 1200px)
+      top: 4.4vmin
+      left: auto
+      right: 4.7vmin
+      +size(15.3vmin,15.9vmin)
+  .scrollBox
+    color: #fff
+    font-size: 14px
+    padding: 0 0 0 5px
+    margin: 5px 0 0
+    max-height: calc( 100vh - 320px )
+    position: relative
+    @media (max-width: 1200px)
+      max-height: none
+      font-size: 2.8vmin
+    @media (max-width: 700px)
+      font-size: 14px
+    table
+      border: 1px solid #ffdc2b
+      margin: 10px 0 
+      @media (max-width: 1200px)
+        margin: 3.4vmin 0 2.7vmin
+      th,td
+        width: 190px
+        padding: 5px
+        text-align: center
+        font-weight: bolder
+        line-height: 1.5
+        letter-spacing: 1px
+        @media (max-width: 1200px)
+          width: 45vmin
+      th
+        color: #000
+        font-size: 18px
+        background-color: #ffdc2b
+        @media (max-width: 1200px)
+          font-size: 4.1vmin
+      td
+        font-size: 15px
+        background-color: #000
+        border: 1px solid #ffdc2b
+        @media (max-width: 1200px)
+          font-size: 3.5vmin
+    ul
+      counter-reset: num
+      li
+        counter-increment: num
+        letter-spacing: 1px
+        line-height: 1.5
+        &:before
+          content: counter(num) '.'
+    b
+      color: #00aeff
+    p 
+      display: flex
+      span 
+        display: block
+        white-space: nowrap

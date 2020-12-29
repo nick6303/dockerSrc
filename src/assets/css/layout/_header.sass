@@ -1,0 +1,185 @@
+#header
+  +setPosAbs(0,0,null,null,20)
+  width: 100%
+  z-index: 10
+  article.pc
+    width: 100%
+    margin: auto
+    padding: 45px 35px 0 100px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: relative
+    .logo
+      margin: 10px 0 0
+      width: 240px
+      animation: fadeIn 1s both .4s
+    section
+      display: flex
+      animation: fadeInDown 1s both .4s
+      a
+        display: block
+        position: relative
+        &>*
+          pointer-events: none
+        &:not(:last-child)
+          margin: 0 20px 0 0 
+        figure
+          background-image: url(~@img/header/circle.png)
+          background-size: 100% 100%
+          +flex-center
+          width: 63px
+          height: 63px
+          &:first-child
+            transition: all 0.15s ease .15s
+            img
+              max-width: 38px
+              max-height: 29px
+          &:last-child
+            position: absolute
+            top: 0
+            left: 0
+            transform: rotateY(90deg)
+            transition: all 0.15s ease
+        &:hover figure
+          &:first-child
+            transform: rotateY(90deg)
+            transition: all 0.15s ease
+          &:last-child
+            transform: rotateY(0deg)
+            transition: all 0.15s ease .15s
+  article.mb
+    +flex-center
+    color: #fff
+    font-size: 4vmin
+    padding: 4vmin 2.5% 3.4vmin 
+    position: relative
+    animation: slideInDown 1s both .4s
+    @media (max-width: 700px)
+      padding: 4vw 2.5vw 0
+    .logo
+      width: 36.15vw
+    .switchBtn
+      position: fixed
+      top: 4.5vmin
+      right: 4vmin
+      width: 6.1vmin
+      height: 4.8vmin
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      &:before,&:after
+        content: ""
+      span,&:before,&:after
+        width: 100%
+        height: 15%
+        background-color: #ffdc2b
+
+#mobileNav
+  position: fixed
+  right: -100%
+  top: 0
+  min-width: 40%
+  height: 100vh
+  z-index: 10
+  transition: all .4s
+  color: #f0dcbc
+  &.open
+    right: 0
+    .coverlay
+      display: block
+  .coverlay
+    display: none
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: rgba(0,0,0,.8)
+  .close
+    position: absolute
+    right: calc(100% + 3vw)
+    top: 10vmin
+    width: 4.2vmin
+    font-size: 4.2vmin
+    color: #ffffff
+    display: flex
+    align-items: center
+    text-align: center
+    letter-spacing: 0
+    line-height: 1.2
+    @media (max-width: 700px)
+      font-size: 18px
+      right: calc(100% + 20px)
+  .logo
+    padding: 7.6vmin 2.5vw 5vmin
+    background-color: $mbActBg
+    +flex-center
+    @media (max-width: 700px)
+      padding: 7.6vmin 15px 5vmin
+    img
+      width: 31vw
+      max-width: none
+      @media (max-width: 700px)
+        width: 160px
+  section
+    position: relative
+    color: #ffffff
+    overflow-y: auto
+    max-height: 100%
+    ul
+      text-align: center
+      position: relative
+      z-index: 1
+      padding: 0 0 3vmin
+      li 
+        position: relative
+        &:not(:last-child):after
+          +fakeLine(22.7vmin,1px,)
+          position: absolute
+          bottom: 0
+          left: 50%
+          transform: translateX(-40%)
+          background-image: linear-gradient(90deg, transparent 0%,#fff 50%,transparent 100%)
+          @media (max-width: 700px)
+            width: 120px
+        a
+          display: block
+          padding: 4vmin 5vmin
+          display: flex
+          justify-content: center
+          align-items:      center
+          letter-spacing: 1px
+          color: #ffffff
+          @media (max-width: 700px)
+            padding: 25px 5vmin
+          &>*
+            pointer-events: none
+          figure
+            width: 5.8vmin
+            margin: 0 2vmin 0 0
+            +flex-center
+            @media (max-width: 700px)
+              width: 32px
+              margin: 0 10px 0 0
+          img
+            max-height: 5vmin 
+            @media (max-width: 700px)
+              max-height: 24px
+    .top
+      background: $mbActBg
+      font-size: 3.2vw
+      @media (max-width: 700px)
+        font-size: 16px
+    .bottom
+      padding: 0 0 6.6vw
+      font-size: 3.2vw
+      background-image: url(~@img/header/navBg.jpg)
+      background-size: cover
+      background-position: center bottom 
+      @media (max-width: 700px)
+        font-size: 16px
+      span
+        color: #fbda75
+        font-size: 5.5vw
+        margin: 0 0 1.4vmin

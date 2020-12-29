@@ -1,0 +1,273 @@
+article.survey
+  padding: 60px 0 100px
+  background-image: url(~@img/survey/bg.jpg)
+  background-size: cover
+  background-position: center
+  min-height: 100vh
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  flex-direction: column
+  animation: fadeIn 0.4s both 
+  background-attachment: fixed
+  @media (max-width: 1600px)
+    padding: 110px 0 100px
+  @media (max-width: 1200px)
+    padding: 15vmin 0 15vmin
+    background-image: url(~@img/survey/bg_M.jpg)
+  @media (max-width: 1200px)
+  .title
+    width: 500px
+    // @media (max-width: 1600px)
+      // width: 31.25vw
+    @media (max-width: 1200px)
+      width: 75vmin
+    @media (max-width: 700px)
+      width: 90vmin
+  .scrollBox
+    padding: 40px 35px 50px 0 
+    // max-height: calc(100vh - 410px)
+    @media (max-width: 1200px)
+      padding: 2.5vmin 2.5vmin 8vmin 0 
+      max-height: calc(100vh - 59vmin)
+    @media (max-width: 700px)
+      max-height: calc(100vh - 65vmin)
+  .sections
+    max-width: 730px
+    width: 77vw
+    margin: 25px 0 0 
+    position: relative
+    border: 2px solid #ffde00
+    padding: 40px 30px 20px 65px
+    border-radius: 5px 
+    // @media (max-width: 1600px)
+      // margin: 10px 0 0 
+    @media (max-width: 1200px)
+      max-width: 960px
+      margin: 2.4vmin 0 0 
+      padding: 2.5vmin 1.5vmin 0vmin 4vmin
+    @media (max-width: 700px)
+      width: 90vw
+    &:before
+      +fakeLine(100%,100%)
+      position: absolute
+      left: 0
+      top: 0
+      border: 4px solid #5b00ff
+      background-image: linear-gradient(213deg,#f1f1f1 0%,#e5e5e5 15.99%,#f1f1f1 16%,#e5e5e5 87.99%,#f4f4f4 88%,#f1f1f1 100%)
+      border-radius: 5px 
+      @media (max-width: 1200px)
+        background-image: linear-gradient(#f1f1f1,#f1f1f1)
+    .section
+      position: relative
+      &:not(:last-child)
+        margin: 0 0 50px 
+        @media (max-width: 1200px)
+          margin: 0 0 5vmin
+      h5
+        font-size: 35px
+        font-weight: bolder
+        color: #43168e
+        @media (max-width: 1200px)
+          font-size: 6vmin
+        @media (max-width: 700px)
+          font-size: 20px
+      h6 
+        color: #626262
+        font-size: 19px
+        margin: 0 0 20px
+        font-weight: normal
+        @media (max-width: 1200px)
+          font-size: 3.4vmin
+        @media (max-width: 700px)
+          font-size: 16px
+      .questionBlock
+        &:not(:last-child)
+          margin: 0 0 20px
+        .subject
+          font-size: 20px
+          font-weight: bolder
+          color: #43168e
+          padding: 0 0 10px
+          @media (max-width: 1200px)
+            font-size: 3.1vmin
+          @media (max-width: 700px)
+            font-size: 15px
+    .buttons
+      +flex-center
+      margin: 70px 0 0
+      @media (max-width: 1200px)
+        margin: 10vmin 0 0
+      button
+        background-image: url(~@img/survey/button.png)
+        background-size: 100% 100%
+        +size(180px,70px)
+        border-radius: 35px
+        box-shadow: 0 5px 9px 1px rgba(0,0,0,.5)
+        @media (max-width: 1200px)
+          border-radius: 2.5vmin
+          background-image: url(~@img/survey/button_M.png)
+          +size(33.7vmin,13.6vmin)
+        &:hover
+          background-image: url(~@img/survey/button_H.png)
+  
+  .checkBoxs,.radios
+    display: flex
+    flex-wrap: wrap
+    padding: 15px 10px
+    border-top: 2px solid #43168e
+    @media (max-width: 1200px)
+      padding: 2vmin 2vmin
+  .answerBlock .checkBox,
+  .answerBlock .radio
+    margin: 10px
+    @media (max-width: 1200px)
+      margin: 2vmin 2.2vmin
+    @media (max-width: 700px)
+      margin: 1vmin 3vmin
+    label
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      position: relative
+      padding: 5px 0 5px 25px
+      cursor: url(~@img/press.png),default
+      font-size: 17px
+      @media (max-width: 1200px)
+        font-size: 3.7vmin
+        padding: 5px 0 5px 4.6vmin
+      @media (max-width: 700px)
+        font-size: 15px
+      span
+        +size(18px,18px)
+        display: block
+        border: 1px solid #959595
+        background-color: #fff
+        position: absolute
+        top: calc(5% + 6spx)
+        left: 0
+        border-radius: 50%
+        box-shadow: 0 0 2px #909090 inset
+        @media (max-width: 1200px)
+          +size(3.6vmin,3.6vmin)
+        &:before
+          border-radius: 50%
+          +fakeLine(70%,70%,#3d96ff)
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%,-50%)
+          opacity: 0
+    input[type="checkbox"],input[type="radio"]
+      position: absolute
+      opacity: 0
+      &:checked + label span:before
+        opacity: 1
+    input[type="text"]
+      margin: 0 0 0 25px
+      @media (max-width: 1200px)
+        margin: 0 0 0 2vmin
+  .answerBlock .text
+    width: 100%
+    display: flex
+    textarea 
+      width: 100%
+      background-color: transparent
+      background-attachment: local
+      background-image: url(~@img/survey/textareaBg.png)
+      background-size: 100% 100px
+      background-repeat: repeat-y
+      height: 100px
+      font-size: 20px
+      line-height: 2.5
+      padding: 0 5px 0 5px
+      resize: none
+      border-top: 2px solid #43168e
+      border-bottom: 2px solid #43168e
+      @media (max-width: 1200px)
+        font-size: 3vmin
+        background-size: 100% 15vmin
+        height: 15vmin
+      @media (max-width: 700px)
+        font-size: 15px
+        background-size: 100% 75px
+        height: 112.5px
+      &::-webkit-scrollbar
+        background-color: transparent
+        width: 4px
+      &::-webkit-scrollbar-thumb
+        background-color: #ccc
+      &::-webkit-scrollbar-track
+        background-color: transparent
+  
+  .answerBlock .selector
+    position: relative
+    z-index: 1
+    width: 200px
+    font-size: 23px
+    @media (max-width: 1200px)
+      font-size: 4.1vmin
+      width: 35vmin
+    &:after
+      position: absolute
+      top: 50%
+      right: 10px
+      z-index: 1
+      transform: translateY(-50%)
+      content: "▼"
+      background-color: #fff
+      color: #44168e
+      font-size: 14px
+      pointer-events: none
+      transition: all .4s ease
+      @media (max-width: 1200px)
+        font-size: 2.5vmin
+    &.open
+      &:after
+        transform: translateY(-50%) rotateX(180deg)
+      ul
+        height: 170px
+        opacity: 1
+        @media (max-width: 1200px)
+          height: 30vmin
+    span,select
+      display: block
+      color: #43168e
+      font-weight: bold
+      border: 2px solid #43168e
+      border-radius: 5px
+      text-align: center
+      line-height: 1.5
+      background-color: #fff
+      position: relative
+      z-index: 1
+      width: 200px
+      @media (max-width: 1200px)
+        width: 35vmin
+    select
+      text-align-last: center
+      appearance: none
+    ul
+      background-color: #fff
+      position: absolute
+      top: calc(100% - 2px)
+      left: 0
+      +size(100%,0)
+      border-bottom: 2px solid #43168e
+      border-left: 2px solid #43168e
+      border-right: 2px solid #43168e
+      padding: 0 10px 0
+      overflow: auto
+      opacity: 0
+      transition: all 0.4s ease
+      &::-webkit-scrollbar
+        background-color: transparent
+        width: 4px
+      &::-webkit-scrollbar-thumb
+        background-color: #ccc
+      &::-webkit-scrollbar-track
+        background-color: transparent
+      li
+        color: #626262
+        line-height: 1.8
+        border-bottom: 1px solid #b3b3b3

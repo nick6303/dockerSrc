@@ -1,0 +1,33 @@
+{
+  "name": "slime-modal",
+  "version": "0.2.6",
+  "description": "Modal plugin for activity event",
+  "author": "Wilson <201707020@cyadmk.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab-ce.cyadmk.com/sysevt/act-node-packages/slime-modal.git"
+  },
+  "main": "src/index.tsx",
+  "module": "src/index.tsx",
+  "typings": "types/index.d.ts",
+  "files": [
+    "src",
+    "types"
+  ],
+  "dependencies": {
+    "@types/body-scroll-lock": "^2.6.1",
+    "body-scroll-lock": "^3.1.5",
+    "perfect-scrollbar": "^1.5.0"
+  },
+  "peerDependencies": {
+    "@types/lodash": "^4.14.164",
+    "lodash": "^4.17.20",
+    "vue": "^3.0.2"
+  },
+  "license": "MIT",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

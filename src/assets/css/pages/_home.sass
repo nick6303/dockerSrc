@@ -1,0 +1,118 @@
+
+article.home
+  background-image: url(~@img/bg.jpg)
+  background-size: cover
+  background-position: center
+  +flex-center
+  flex-direction: column
+  min-height: 100vh
+  padding: 90px 0 120px
+  position: relative
+  animation: fadeIn .5s both 
+  @media (max-width: 1200px)
+    padding: 12vmin 0 16vmin
+  &:before
+    +fakeLine(100%,100%,transparent)
+    position: absolute
+    top: 0
+    left: 0
+    background-image: url(~@img/star.png)
+    background-size: cover
+    background-position: center
+    animation: fadeIn 1s both .4s
+  .title,form
+    position: relative
+    z-index: 1
+  .title
+    animation: zoomIn .8s both .4s
+  form
+    margin: -30px 0 0
+    +flex-center
+    line-height: 1.4
+    font-size: 26px
+    animation: fadeInUp 1s both .7s
+    @media (min-width: 1201px)
+      background-image: url(~@img/penBg.png)
+      background-size: 100% 100%
+      padding: 18px 0 45px 100px
+    @media (max-width: 1200px)
+      margin: 8.2vmin 0 0
+      flex-direction: column
+      font-size: 3.7vmin
+    @media (max-width: 700px)
+      font-size: 18px
+    .formItem
+      display: flex
+      align-items: center
+      position: relative
+      @media (max-width: 1200px)
+        padding: 1.4vmin 8.6vmin 6.5vmin 14.7vmin
+        background-image: url(~@img/penBg_M.png)
+        background-size: 100% 100%
+      &:after
+        @media (max-width: 1200px)
+          top: 5.8vmin
+          right: 8.6vmin
+          transform: translateY(-50%)
+        @media (max-width: 700px)
+          top: calc(12px + 3.7vmin)
+    p:after,.formItem:after
+      +fakeLine(4px,100%,#fff)
+      position: absolute
+      border-radius: 5px
+      @media (min-width: 1201px)
+        top: 0
+        right: 0
+      @media (max-width: 1200px)
+        height: 4.9vmin
+        width: 0.5vmin
+    p
+      color: #ffdc2b
+      padding: 0 20px
+      position: relative
+      @media (max-width: 1200px)
+        padding: 0 3vmin 0 3.5vmin
+        font-weight: bolder
+      &:after
+        @media (max-width: 1200px)
+          top: 50%
+          right: 0
+          transform: translateY(-50%)
+    input
+      font-size: 19px 
+      background-color: transparent
+      width: 270px
+      height: 34px
+      text-align: center
+      color: #fff
+      position: relative
+      line-height: 1
+      @media (max-width: 1200px)
+        width: 48vmin
+        height: auto
+        font-size: 3.2vmin
+        padding: 2.3vmin 0 
+      @media (max-width: 700px)
+        font-size: 18px
+        width: 50vmin
+      &:placeholder
+        color: #848484
+    .btn
+      color: #fff
+      font-weight: bolder
+      padding: 0 30px 0 25px
+      +flex-center
+      @media (max-width: 1200px)
+        margin: 7.5vmin 0 0
+        background-image: url(~@img/button.png)
+        background-size: 100% 100%
+        width: 49vmin
+        font-size: 4.9vmin
+        padding: 4vmin 0
+
+  #bg
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%

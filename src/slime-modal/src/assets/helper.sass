@@ -1,0 +1,42 @@
+/* transition fade */
+.vact-modal-fade-enter-from
+  opacity: 0
+
+.vact-modal-fade-enter-active
+  transition: opacity 0.25s ease-out
+
+/* transition modal */
+.vact-modal-zoom-enter-active,
+.vact-modal-zoom-leave-active
+  transition: opacity 0.25s ease-out
+
+.vact-modal-zoom-enter-from,
+.vact-modal-zoom-leave-active
+  opacity: 0
+
+.vact-modal-zoom-enter-from .modal-zoom-container,
+.vact-modal-zoom-leave-active .modal-zoom-container
+  -webkit-transform: scale(1.1)
+  transform: scale(1.1)
+
+/* modal wrapper */
+.vact-modal-wrapper
+  z-index: 999
+  position: fixed
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  display: flex
+  align-items: center
+  justify-content: center
+
+  &.with-mask
+    background-color: rgba(0, 0, 0, 0.75)
+
+/* body scroll y */
+.vact-body-fixed
+  position: fixed !important
+
+.vact-body-force-scrollbar-reserve
+  overflow-y: scroll !important
